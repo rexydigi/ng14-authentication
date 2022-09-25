@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   isLoggedIn = false;
+  isLogging = false;
   username?: string;
 
   constructor(private tokenStorageService: TokenStorageService) {}
@@ -17,6 +18,7 @@ export class AppComponent {
   }
 
   login(): void {
+    this.isLogging = true;
     this.httpRequest().then(()=>window.location.reload());
   }
 
